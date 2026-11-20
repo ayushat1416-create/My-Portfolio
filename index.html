@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush Thaware | Full Stack Developer</title>
+<meta name="description" content="Ayush Thaware, MERN full stack developer in Nagpur. React, Next.js, Node.js and MongoDB projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--bg:#0a0b17;--surf:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--ink:#eceaff;--muted:#9a9cb8;--a:#8b6cff;--b:#22d3ee;--nav:rgba(20,21,40,.7);--solid:#8b6cff;--on:#fff;--held:#f5b942;
+--display:"Syne","Trebuchet MS",system-ui,sans-serif;--body:"DM Sans","Segoe UI",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f6f5fb;--surf:#fff;--line:rgba(20,20,50,.12);--ink:#14142b;--muted:#5a5c78;--a:#5b3df5;--b:#0891b2;--nav:rgba(255,255,255,.8);--solid:#5b3df5}
+html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--bg)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:6px;padding:6px 6px 6px 18px;border:1px solid var(--line);border-radius:999px;background:var(--nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);max-width:calc(100% - 24px)}
+.nav b{font:800 17px var(--display);margin-right:10px}
+.nav a.l{text-decoration:none;color:var(--muted);font-size:14px;padding:6px 10px;border-radius:999px}.nav a.l:hover{color:var(--ink)}
+.nav button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font:700 15px var(--body);text-decoration:none;border:1px solid var(--line);background:var(--surf);color:var(--ink);cursor:pointer}
+.btn.p{background:var(--solid);border-color:var(--solid);color:var(--on)}.btn.s{padding:8px 16px;font-size:14px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1}
+h2{font-size:clamp(34px,5vw,56px);letter-spacing:-.02em;margin-bottom:34px}
+h3{font-size:22px;line-height:1.15;margin-bottom:10px}
+p{margin:0 0 14px;max-width:60ch}.muted{color:var(--muted)}
+.hero{position:relative;padding:150px 0 70px;--mx:30%;--my:20%}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--mx) var(--my),color-mix(in srgb,var(--a) 28%,transparent),transparent 70%);pointer-events:none}
+.live{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:var(--surf);border-radius:999px;padding:6px 16px;font-size:14px;color:var(--muted);margin-bottom:28px}
+.live i{width:8px;height:8px;border-radius:50%;background:#34d399;animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(52,211,153,0)}0%{box-shadow:0 0 0 0 rgba(52,211,153,.6)}}
+h1{font-size:clamp(64px,13vw,168px);font-weight:800;letter-spacing:-.04em;line-height:.88}
+.hero .lead{font-size:clamp(18px,2.2vw,22px);color:var(--muted);margin:30px 0 34px;max-width:36em}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.rise>*{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}.rise>*:nth-child(2){animation-delay:.1s}.rise>*:nth-child(3){animation-delay:.2s}.rise>*:nth-child(4){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.marq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:18px 0;margin-top:40px}
+.marq div{display:inline-flex;gap:48px;padding-right:48px;animation:go 32s linear infinite;font:600 22px var(--display);color:var(--muted)}
+.marq:hover div{animation-play-state:paused}
+@keyframes go{to{transform:translateX(-50%)}}
+section{padding:110px 0 0}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.card{position:relative;border:1px solid var(--line);background:var(--surf);border-radius:24px;padding:30px;overflow:hidden;--x:50%;--y:0%}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--x) var(--y),color-mix(in srgb,var(--a) 22%,transparent),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::before{opacity:1}
+.c6{grid-column:span 6}.c3{grid-column:span 3}.c2{grid-column:span 2}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.feat h3{font-size:clamp(28px,3.4vw,40px)}
+.b{padding-left:20px;margin:12px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.chips li{font-size:13px;padding:4px 12px;border-radius:999px;border:1px solid var(--line)}
+.pl{display:inline-block;margin-top:16px;font-weight:700;color:var(--b)}
+.demo{background:color-mix(in srgb,var(--bg) 70%,transparent);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative}
+.demo .sm{font-size:14px;color:var(--muted);margin-bottom:14px}
+#tables{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.t{aspect-ratio:1;border-radius:50%;border:2px solid var(--b);background:transparent;color:var(--ink);font:800 17px var(--display);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;transition:transform .15s,background .2s}
+.t small{font:400 11px var(--body);color:var(--muted)}.t:hover{transform:scale(1.07);background:color-mix(in srgb,var(--b) 15%,transparent)}
+.t.held{background:var(--held);border-color:var(--held);color:#1a1200}.t.held small{color:#1a1200}
+.t.booked{border-style:dashed;border-color:var(--muted);color:var(--muted);opacity:.55;cursor:not-allowed}
+#status{min-height:48px;font-size:14px;margin-bottom:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+.split h2{position:sticky;top:100px;align-self:start}
+.tl{border-left:2px solid var(--line);padding-left:30px;position:relative}
+.tl::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--a);box-shadow:0 0 0 6px color-mix(in srgb,var(--a) 25%,transparent)}
+.tl ul{padding-left:20px;margin:16px 0 0}.tl li{margin-bottom:10px}
+.card h3.sk{font-size:19px;color:var(--b)}.card .sk+p{font-size:15px;color:var(--muted);margin:0}
+.big{font:800 clamp(30px,6vw,76px)/1 var(--display);letter-spacing:-.03em;text-decoration:none;display:inline-block;margin:6px 0 28px;word-break:break-word;border-bottom:3px solid var(--a)}
+.contact{padding:56px 40px;text-align:left}
+footer{padding:60px 0 36px;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.rise>*,.live i,.marq div{animation:none}html{scroll-behavior:auto}.t{transition:none}}
+@media (max-width:820px){.c3,.c2,.c6{grid-column:span 6}.feat,.split{grid-template-columns:1fr}.split h2{position:static}.nav a.l{display:none}.hero{padding-top:120px}.card{padding:24px}.contact{padding:36px 24px}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main"><b>AT</b><a class="l" href="#work">Work</a><a class="l" href="#experience">Experience</a><a class="l" href="#skills">Skills</a><button id="theme" type="button" aria-label="Switch colour theme">Theme</button><a class="btn p s" href="#contact">Hire me</a></nav>
+
+<main>
+<header class="hero" id="top"><div class="wrap rise">
+  <div class="live"><i></i>Available for junior roles in Nagpur</div>
+  <h1>Ayush<br>Thaware</h1>
+  <p class="lead">Full stack developer building fast, secure web apps with React, Next.js, Node.js and MongoDB. Six months of internship experience shipping APIs, authentication and clean interfaces.</p>
+  <div class="btns"><a class="btn p" href="#work">See my work</a><a class="btn" href="mailto:ayushthaware1402@gmail.com">Email me</a></div>
+</div>
+<div class="marq" aria-hidden="true"><div><span>React.js</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Python</span><span>Gemini API</span><span>React.js</span><span>Next.js</span><span>TypeScript</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Tailwind CSS</span><span>Framer Motion</span><span>Python</span><span>Gemini API</span></div></div>
+</header>
+
+<div class="wrap">
+<section id="work">
+  <h2>Selected work</h2>
+  <div class="bento">
+    <article class="card c6 feat">
+      <div>
+        <h3>3D Restaurant Table Booking System</h3>
+        <p class="muted">A full stack app where guests see live table availability and reserve a table.</p>
+        <ul class="b"><li>Table locking holds a table while a guest books and releases it if the booking isn’t completed, so two people can’t book the same table.</li><li>Admin dashboard to manage bookings and track revenue.</li><li>Deployed on Vercel.</li></ul>
+        <ul class="chips"><li>Next.js</li><li>TypeScript</li><li>MongoDB</li><li>Mongoose</li><li>Tailwind CSS</li><li>Framer Motion</li></ul>
+        <a class="pl" href="https://github.com/ayushat1416-create" target="_blank" rel="noopener">View code on GitHub ↗</a>
+      </div>
+      <div class="demo">
+        <p class="sm">Try a simplified table lock: pick a table, then book it as a second guest.</p>
+        <div id="tables" role="group" aria-label="Restaurant tables"></div>
+        <div id="status" aria-live="polite">Pick a free table to hold it for 15 seconds.</div>
+        <div class="row"><button class="btn p s" id="confirm" type="button">Confirm booking</button><button class="btn s" id="second" type="button">Try as second guest</button></div>
+      </div>
+    </article>
+    <article class="card c3">
+      <h3>Authentication System and User Dashboard</h3>
+      <p class="muted">JWT registration and login with a dashboard for editing your profile and uploading a profile image. REST endpoints connected to the React client with Axios and consistent error handling.</p>
+      <ul class="chips"><li>React.js</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li><li>JWT</li><li>Multer</li></ul>
+      <a class="pl" href="https://github.com/ayushat1416-create" target="_blank" rel="noopener">View code on GitHub ↗</a>
+    </article>
+    <article class="card c3">
+      <h3>Guardian: prompt injection detector</h3>
+      <p class="muted">A hybrid detector that checks prompts against regex rules, then asks the Google Gemini API to classify suspicious ones as injection attempts. Tested on a 50-prompt set as a self-directed AI security project.</p>
+      <ul class="chips"><li>Python</li><li>Google Gemini API</li><li>Regex</li></ul>
+      <a class="pl" href="https://github.com/ayushat1416-create" target="_blank" rel="noopener">View code on GitHub ↗</a>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="split">
+    <h2>Experience</h2>
+    <div class="tl">
+      <h3>Full Stack Development Intern, Console DotSuccess</h3>
+      <p class="muted">January to June 2026 · Pune, India</p>
+      <ul>
+        <li>Built four or more responsive UI modules in React.js and Tailwind CSS, and sped up page loads with lazy loading and image optimization.</li>
+        <li>Designed MongoDB schemas with Mongoose and added indexes on frequently searched fields to speed up queries.</li>
+        <li>Built and tested RESTful CRUD APIs with Node.js, Express.js and Postman.</li>
+        <li>Added JWT authentication and middleware to protect private routes and profile updates.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="bento">
+    <div class="card c2"><h3 class="sk">Languages</h3><p>JavaScript (ES6+), TypeScript, Python, SQL, HTML5, CSS3</p></div>
+    <div class="card c2"><h3 class="sk">Frontend</h3><p>React.js, Next.js (App Router), Tailwind CSS, Framer Motion, Context API, Axios, responsive design</p></div>
+    <div class="card c2"><h3 class="sk">Backend</h3><p>Node.js, Express.js, REST APIs, JWT authentication, middleware, Multer file uploads</p></div>
+    <div class="card c2"><h3 class="sk">Databases</h3><p>MongoDB, Mongoose, SQL queries, schema design, indexing</p></div>
+    <div class="card c2"><h3 class="sk">Tools</h3><p>Git, GitHub, Postman</p></div>
+    <div class="card c2"><h3 class="sk">AI and APIs</h3><p>Google Gemini API, prompt design, GitHub Copilot, ChatGPT</p></div>
+    <div class="card c3"><h3 class="sk">Certifications</h3><p>AWS re/Start Graduate, Amazon Web Services (2025)<br>Oracle Cloud Infrastructure Foundations Associate, Oracle (2025)</p></div>
+    <div class="card c3"><h3 class="sk">Education</h3><p>B.Tech in Computer Science, Ajeenkya DY Patil University, 2022 to 2026<br>CGPA 7.5 / 10</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="card contact">
+    <h2 style="margin-bottom:8px">Let’s work together.</h2>
+    <p class="muted">I’m based in Nagpur, can work onsite, and reply within a day.</p>
+    <a class="big" href="mailto:ayushthaware1402@gmail.com">ayushthaware1402@gmail.com</a>
+    <div class="btns"><a class="btn p" href="tel:+919322642874">+91 93226 42874</a><a class="btn" href="https://www.linkedin.com/in/ayush-thaware-9363a6350" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/ayushat1416-create" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</section>
+</div>
+</main>
+<footer><div class="wrap">© 2026 Ayush Thaware</div></footer>
+
+<script>
+(function(){
+  var seats=[2,4,2,4,6,2,4,2,4,6,2,4],held=-1,left=0,timer=null;
+  var S=seats.map(function(_,i){return(i===1||i===6||i===10)?'booked':'free'});
+  var grid=document.getElementById('tables'),st=document.getElementById('status');
+  function say(m){st.textContent=m}
+  function render(){
+    grid.innerHTML='';
+    S.forEach(function(s,i){
+      var b=document.createElement('button');b.type='button';b.className='t '+s;
+      b.innerHTML='T'+(i+1)+'<small>'+(s==='held'?left+'s':seats[i]+' seats')+'</small>';
+      b.setAttribute('aria-label','Table '+(i+1)+', '+seats[i]+' seats, '+s);
+      b.onclick=function(){pick(i)};grid.appendChild(b);
+    });
+  }
+  function release(){clearInterval(timer);if(held>-1)S[held]='free';held=-1}
+  function pick(i){
+    if(S[i]==='booked'){say('Table '+(i+1)+' is already booked. Pick another one.');return}
+    if(held===i){release();say('You released table '+(i+1)+'.');render();return}
+    release();held=i;S[i]='held';left=15;
+    say('Table '+(i+1)+' is held for you. Confirm within 15 seconds or it will be released.');
+    timer=setInterval(function(){
+      left--;
+      if(left<=0){var n=held+1;release();say('Hold expired. Table '+n+' is free again.')}
+      render();
+    },1000);
+    render();
+  }
+  document.getElementById('confirm').onclick=function(){
+    if(held<0){say('Pick a free table first.');return}
+    var n=held+1;clearInterval(timer);S[held]='booked';held=-1;say('Table '+n+' is booked.');render();
+  };
+  document.getElementById('second').onclick=function(){
+    if(held<0){say('Hold a table first, then try booking it as a second guest.');return}
+    say('Second guest blocked: table '+(held+1)+' is held by someone else. They’re asked to pick another table.');
+  };
+  render();
+  var root=document.documentElement,hero=document.querySelector('.hero');
+  document.getElementById('theme').onclick=function(){
+    root.setAttribute('data-theme',root.getAttribute('data-theme')==='light'?'dark':'light');
+  };
+  hero.addEventListener('pointermove',function(e){
+    var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');
+  });
+  document.querySelectorAll('.card').forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect();c.style.setProperty('--x',(e.clientX-r.left)+'px');c.style.setProperty('--y',(e.clientY-r.top)+'px');
+    });
+  });
+})();
+</script>
+</body>
+</html>
